@@ -14,9 +14,10 @@ class structuralController extends Controller
 
     public function proxy()
     {
+        $get=new getProduct();
         print '<h1>PROXY</h1>';
-        print (new getProduct())->run('1').PHP_EOL;
+        print $get->run('1').PHP_EOL;
         print "<br>";
-        print (new getProduct())->runImpl('2').PHP_EOL;
+        print $get->runImpl('2').PHP_EOL;
     }
 }

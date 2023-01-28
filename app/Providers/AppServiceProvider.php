@@ -13,12 +13,16 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
+
+    public $bindings=[
+        productRepositoryInterface::class=>productRepositoryImpl::class
+    ];
     public function register()
     {
 
-        $this->app->bind(productRepositoryInterface::class, function ($app) {
-            return new productRepositoryImpl();
-        });
+//        $this->app->bind(productRepositoryInterface::class, function ($app) {
+//            return new productRepositoryImpl();
+//        });
     }
 
     /**
