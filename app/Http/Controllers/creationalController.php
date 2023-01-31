@@ -50,6 +50,13 @@ class creationalController extends Controller
 //      Lara way
         print "<h1>Lara way</h1>";
 
+//        биндим интерфейс к классу (класс не обязан реализовывать интерфейс), точбы сделать синглтон
+//        либо можно прописать в appServiceProvider:
+//        public $singletons=[
+//          laraSingletonInterface::class=>laraSingletonClass::class
+//        ];
+
+
         App::singleton(laraSingletonInterface::class, function ($app) {
             return new laraSingletonClass();
         });
