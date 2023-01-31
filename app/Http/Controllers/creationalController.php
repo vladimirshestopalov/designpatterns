@@ -4,8 +4,12 @@ namespace App\Http\Controllers;
 
 use App\DesignPatterns\Creational\Builder\buildSportCar;
 use App\DesignPatterns\Creational\FactoryMethod\Dialogs\Windows;
+use App\DesignPatterns\Creational\Singleton\laraSingletonClass;
+use App\DesignPatterns\Creational\Singleton\laraSingletonInterface;
+use App\DesignPatterns\Creational\Singleton\mySingletonClass;
 use App\DesignPatterns\Structural\Proxy\getProduct;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class creationalController extends Controller
 {
@@ -26,5 +30,36 @@ class creationalController extends Controller
         print "<pre>";
         var_dump($build->make());
         print "</pre>";
+    }
+
+    public function testSingleton()
+    {
+        $item=mySingletonClass::getInstance();
+        $item2=mySingletonClass::getInstance();
+
+//      Normal way
+
+        print "<h1>Normal way</h1>";
+
+        print $item->test()."<br>";
+        print $item2->test()."<br>";
+
+        if($item===$item2){print '<p>оба экземпляра одинаковы</p>';}
+
+
+//      Lara way
+        print "<h1>Lara way</h1>";
+
+        App::singleton(laraSingletonInterface::class, function ($app) {
+            return new laraSingletonClass();
+        });
+
+        $item3=app(laraSingletonInterface::class);
+        $item3->test();
+        $item4=app(laraSingletonInterface::class);
+
+        var_dump($item3);
+        var_dump($item4);
+        if($item3===$item4){print '<p>оба экземпляра lara-синглтона одинаковы</p>';}
     }
 }

@@ -21,3 +21,4 @@ Route::get('/structural/proxy',[ \App\Http\Controllers\structuralController::cla
 
 Route::get('/Creational/FactoryMethod',[ \App\Http\Controllers\creationalController::class,'renderWindowsButton']);
 Route::get('/Creational/Builder',[ \App\Http\Controllers\creationalController::class,'makeSportCar']);
+Route::get('/Creational/Singleton',[ \App\Http\Controllers\creationalController::class,'testSingleton']);
