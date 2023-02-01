@@ -18,6 +18,8 @@ Route::get('/', function () {
 });
 Route::get('/structural',[ \App\Http\Controllers\structuralController::class,'start']);
 Route::get('/structural/proxy',[ \App\Http\Controllers\structuralController::class,'proxy']);
+Route::get('/structural/facade',[ \App\Http\Controllers\structuralController::class,'facade']);
+
 
 Route::get('/Creational/FactoryMethod',[ \App\Http\Controllers\creationalController::class,'renderWindowsButton']);
 Route::get('/Creational/Builder',[ \App\Http\Controllers\creationalController::class,'makeSportCar']);
