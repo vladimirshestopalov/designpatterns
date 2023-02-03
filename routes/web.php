@@ -25,3 +25,6 @@ Route::get('/structural/decorator',[ \App\Http\Controllers\structuralController:
 Route::get('/Creational/FactoryMethod',[ \App\Http\Controllers\creationalController::class,'renderWindowsButton']);
 Route::get('/Creational/Builder',[ \App\Http\Controllers\creationalController::class,'makeSportCar']);
 Route::get('/Creational/Singleton',[ \App\Http\Controllers\creationalController::class,'testSingleton']);
+
+//lab
+Route::get('/Lab/links',[ \App\Http\Controllers\labController::class,'links']);
