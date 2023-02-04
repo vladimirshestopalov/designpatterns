@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Lab\Callback\testCallback;
 use App\Lab\Links\linksTest;
 use Illuminate\Http\Request;
 
@@ -11,5 +12,10 @@ class labController extends Controller
     {
         $l=new linksTest();
         $l->run();
+    }
+    public function callbackTst()
+    {
+        $l=new testCallback();
+        $l->go();
     }
 }
