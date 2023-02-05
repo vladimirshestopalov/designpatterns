@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\DesignPatterns\Structural\Decorator\decoratableText;
 use App\DesignPatterns\Structural\Decorator\Decorators\sayADecorator;
 use App\DesignPatterns\Structural\Decorator\Decorators\sayBDecorator;
+use App\DesignPatterns\Structural\Facade\Contracts\Logname;
 use App\DesignPatterns\Structural\Facade\Facades\Logger;
 use App\DesignPatterns\Structural\Facade\Log;
 use App\DesignPatterns\Structural\Proxy\getProduct;
@@ -29,10 +30,16 @@ class structuralController extends Controller
 
     public function facade()
     {
-//      Logname мжет быть и индетрфейсом, который реализует класс Log
-        App::bind('Logname', function ($app) {
+//      Logname мжет быть  индетрфейсом, который реализует класс Log
+
+        App::bind(Logname::class, function ($app) {
             return new Log();
         });
+
+//      Logname мжет быть и просто словом
+//        App::bind('Logname', function ($app) {
+//            return new Log();
+//        });
 
         print Logger::insert();
     }

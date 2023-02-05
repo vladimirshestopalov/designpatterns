@@ -13,6 +13,21 @@ class testCallback
 //        $c=\Closure::fromCallable([$this, 'closure']);
         $lengths = array_map( $c , $strings);
         print_r($lengths);
+
+//        ----------------
+        $number = 89;
+
+        $showNumber = function() use(&$number)
+        {
+            echo $number;
+        };
+
+        $showNumber();
+        $number=65;
+        $showNumber();
+
+
+
     }
 
     private function getCallback():callable
