@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DesignPatterns\Structural\Bridge\renderPage;
 use App\DesignPatterns\Structural\Decorator\decoratableText;
 use App\DesignPatterns\Structural\Decorator\Decorators\sayADecorator;
 use App\DesignPatterns\Structural\Decorator\Decorators\sayBDecorator;
@@ -48,5 +49,11 @@ class structuralController extends Controller
     {
         $res=new sayADecorator(new sayBDecorator(new decoratableText()));
         $res->decorate();
+    }
+
+    public function bridge()
+    {
+        $res=new renderPage();
+        $res->run();
     }
 }

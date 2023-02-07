@@ -20,6 +20,7 @@ Route::get('/structural',[ \App\Http\Controllers\structuralController::class,'st
 Route::get('/structural/proxy',[ \App\Http\Controllers\structuralController::class,'proxy']);
 Route::get('/structural/facade',[ \App\Http\Controllers\structuralController::class,'facade']);
 Route::get('/structural/decorator',[ \App\Http\Controllers\structuralController::class,'decoration']);
+Route::get('/structural/bridge',[ \App\Http\Controllers\structuralController::class,'bridge']);
 
 
 Route::get('/Creational/FactoryMethod',[ \App\Http\Controllers\creationalController::class,'renderWindowsButton']);
