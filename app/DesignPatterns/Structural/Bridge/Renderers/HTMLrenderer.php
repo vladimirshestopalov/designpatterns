@@ -13,7 +13,7 @@ class HTMLrenderer implements Irenderer
 
     public function renderDescr($descr)
     {
-        print "<div>{$descr}</div>";
+        print "<div style='background:#eee;padding:20px'>{$descr}</div>";
     }
 
 }

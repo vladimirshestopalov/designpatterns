@@ -14,13 +14,13 @@ class renderPage
         $html_renderer=new HTMLrenderer();
         $simple_renderer=new simpleRenderer();
 
-        $product_page=new ProductPage($html_renderer,"Заголовок","Описание");
-        $text_page=new textPage($simple_renderer,"Заголовок","Описание");
+        $product_page=new ProductPage($html_renderer,"Заголовок продукта","Описание продукта");
+        $text_page=new textPage($simple_renderer,"Заголовок текста","Описание теста");
 
-        $res['product']=$product_page->renderWholePage();
-        $res['text']=$text_page->renderWholePage();
+        $product_page->renderWholePage();
+        print "<hr>";
+        $text_page->renderWholePage();
 
-        print $res['product'];
-        print $res['text'];
+
     }
 }
