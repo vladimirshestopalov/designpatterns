@@ -18,4 +18,9 @@ class labController extends Controller
         $l=new testCallback();
         $l->go();
     }
+
+    public function vue()
+    {
+        return view('vue');
+    }
 }

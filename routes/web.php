@@ -30,4 +30,6 @@ Route::get('/Creational/Singleton',[ \App\Http\Controllers\creationalController:
 //lab
 Route::get('/Lab/links',[ \App\Http\Controllers\labController::class,'links']);
 Route::get('/Lab/Callback',[ \App\Http\Controllers\labController::class,'callbackTst']);
+Route::get('/Lab/vue',[ \App\Http\Controllers\labController::class,'vue']);
+
 
