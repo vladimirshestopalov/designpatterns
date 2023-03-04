@@ -1,6 +1,7 @@
 <script>
 let id = 0
 
+
 export default {
     data() {
         return {
@@ -33,6 +34,8 @@ export default {
 </script>
 
 <template>
+    <tst></tst>
+    <mybutton></mybutton>
     <form @submit.prevent="addTodo">
         <input v-model="newTodo">
         <button>Add Todo</button>

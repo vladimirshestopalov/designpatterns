@@ -1,5 +1,5 @@
 <template>
-eeeeee
+I am test component
 </template>
 
 <script>
