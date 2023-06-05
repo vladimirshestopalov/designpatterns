@@ -15,7 +15,7 @@ class creationalController extends Controller
 {
     public function start()
     {
-        print "Порождающие паттерны";
+        return view('creational.index');
     }
 
     public function renderWindowsButton()

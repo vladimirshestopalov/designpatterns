@@ -16,16 +16,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/structural',[ \App\Http\Controllers\structuralController::class,'start']);
-Route::get('/structural/proxy',[ \App\Http\Controllers\structuralController::class,'proxy']);
-Route::get('/structural/facade',[ \App\Http\Controllers\structuralController::class,'facade']);
-Route::get('/structural/decorator',[ \App\Http\Controllers\structuralController::class,'decoration']);
-Route::get('/structural/bridge',[ \App\Http\Controllers\structuralController::class,'bridge']);
+Route::get('/structural',[ \App\Http\Controllers\structuralController::class,'start'])->name('structural');
+Route::get('/structural/proxy',[ \App\Http\Controllers\structuralController::class,'proxy'])->name('structural.proxy');
+Route::get('/structural/facade',[ \App\Http\Controllers\structuralController::class,'facade'])->name('structural.facade');
+Route::get('/structural/decorator',[ \App\Http\Controllers\structuralController::class,'decoration'])->name('structural.decoration');
+Route::get('/structural/bridge',[ \App\Http\Controllers\structuralController::class,'bridge'])->name('structural.bridge');
 
 
-Route::get('/Creational/FactoryMethod',[ \App\Http\Controllers\creationalController::class,'renderWindowsButton']);
-Route::get('/Creational/Builder',[ \App\Http\Controllers\creationalController::class,'makeSportCar']);
-Route::get('/Creational/Singleton',[ \App\Http\Controllers\creationalController::class,'testSingleton']);
+Route::get('/Creational',[ \App\Http\Controllers\creationalController::class,'start'])->name('creational');
+Route::get('/Creational/FactoryMethod',[ \App\Http\Controllers\creationalController::class,'renderWindowsButton'])->name('creational.factorymethod');
+Route::get('/Creational/Builder',[ \App\Http\Controllers\creationalController::class,'makeSportCar'])->name('creational.builder');
+Route::get('/Creational/Singleton',[ \App\Http\Controllers\creationalController::class,'testSingleton'])->name('creational.singleton');
 
 //lab
 Route::get('/Lab/links',[ \App\Http\Controllers\labController::class,'links']);

@@ -17,7 +17,7 @@ class structuralController extends Controller
 {
     public function start()
     {
-        print "структурные паттерны";
+        return view('structural.index');
     }
 
     public function proxy()
